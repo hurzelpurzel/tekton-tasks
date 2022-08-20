@@ -24,10 +24,10 @@ def writeOutput(filename, output){
    file.write text
 }
 
-def output = [:]
-output.test = "Testausgabe"
 
 
-println 'This is the Groovy world!'
 
-writeOutput( "out.yaml" , output)
+
+def in = loadInput( "out.yaml" )
+println "found -->"
+print in

@@ -39,9 +39,3 @@ spec:
       env:
         - name: WORKSPACE_SOURCE
           value: $(workspaces.source.path)
-    - name: show-outputfile
-      image: docker.io/redhat/ubi8:latest
-      workingDir: $(workspaces.source.path)/$(params.PROJECT_DIR)
-      command: ["cat"]
-      args:
-        - "$(workspaces.source.path)/out.yml"

@@ -29,6 +29,17 @@ spec:
       workspaces:
         - name: source
           workspace: shared-workspace
+    - name: groovy-show
+      taskRef:
+        name: groovy
+      runAfter:
+        - groovy-run
+      params:
+        - name: SCRIPT
+          value: "test/display.groovy"
+      workspaces:
+        - name: source
+          workspace: shared-workspace
 ---
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
