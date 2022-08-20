@@ -14,9 +14,9 @@ def loadInput(filename){
 
 def writeOutput(filename, output){
    def workspace = System.getenv('WORKSPACE_SOURCE')
-   def builder = new YamlBuilder()
+   def yaml = new YamlBuilder()
    
-   text = builder(output)
+   def text = yaml(output).toString()
 
    println text
 
@@ -28,6 +28,6 @@ def output = [:]
 output.test = "Testausgabe"
 
 
-println 'This is the Groovy world!'
+
 
 writeOutput( "out.yaml" , output)
