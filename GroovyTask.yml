@@ -18,7 +18,7 @@ spec:
       description: The workspace consisting of the gradle project.
   params:
     - name: GROOVY_IMAGE
-      description: Gradle base image.
+      description: Groovy base image.
       type: string
       default: docker.io/library/groovy:latest
     - name: PROJECT_DIR
@@ -26,13 +26,13 @@ spec:
       type: string
       default: "."
     - name: SCRIPT
-      description: 'The gradle tasks to run (default: build)'
+      description: 'The groovy script to run (default: main.groovy)'
       type: string
       default: "main.groovy"
   steps:
     - name: groovy-task
       image: $(params.GROOVY_IMAGE)
       workingDir: $(workspaces.source.path)/$(params.PROJECT_DIR)
-      command: ["groovy"]
+      command: ["/home/groovy/scripts/groovy groovy"]
       args:
         - "$(params.SCRIPT)"
