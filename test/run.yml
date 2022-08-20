@@ -16,8 +16,6 @@ spec:
       params:
         - name: url
           value: https://github.com/hurzelpurzel/TektonTasks.git
-        - name: subdirectory
-          value: "test"
         - name: deleteExisting
           value: "true"
     - name: groovy-run
@@ -27,7 +25,7 @@ spec:
         - fetch-code
       params:
         - name: SCRIPT
-          value: "main.groovy"
+          value: "test/main.groovy"
       workspaces:
         - name: source
           workspace: shared-workspace

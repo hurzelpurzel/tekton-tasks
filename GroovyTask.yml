@@ -12,10 +12,10 @@ metadata:
     tekton.dev/platforms: "linux/amd64,linux/s390x,linux/ppc64le"
 spec:
   description: >-
-    This Task can be used to run a Gradle build.
+    This Task can be used to run a Groovy script.
   workspaces:
     - name: source
-      description: The workspace consisting of the gradle project.
+      description: The workspace consisting of the  project.
   params:
     - name: GROOVY_IMAGE
       description: Groovy base image.
@@ -33,6 +33,9 @@ spec:
     - name: groovy-task
       image: $(params.GROOVY_IMAGE)
       workingDir: $(workspaces.source.path)/$(params.PROJECT_DIR)
-      command: ["/home/groovy/scripts/groovy groovy"]
+      command: ["groovy"]
       args:
         - "$(params.SCRIPT)"
+      env:
+        - name: WORKSPACE_SOURCE
+          value: $(workspaces.source.path)
