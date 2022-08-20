@@ -19,7 +19,8 @@ def writeOutput(filename, output){
    file.write builder.toString()
 }
 
-def output.test = "Testausgabe"
+def output = [:]
+output.test = "Testausgabe"
 
 
 println 'This is the Groovy world!'
