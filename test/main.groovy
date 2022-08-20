@@ -18,7 +18,7 @@ def writeOutput(filename, output){
    
    def text = yaml(output).toString()
 
-   println text
+   
 
    File file = new File(workspace+"/"+ filename)
    file.write text
