@@ -2,10 +2,10 @@ import groovy.yaml.YamlBuilder;
 import groovy.yaml.YamlSlurper;
 
 
-def workspace = System.getenv('WORKSPACE_SOURCE')
 
 
 def loadInput(filename){
+  def workspace = System.getenv('WORKSPACE_SOURCE')
   def ys = new YamlSlurper()
   File fh1 = new File(workspace+"/"+ filename)
   text = fh1.getText('UTF-8')
@@ -13,6 +13,7 @@ def loadInput(filename){
 }
 
 def writeOutput(filename, output){
+   def workspace = System.getenv('WORKSPACE_SOURCE')
    def builder = new YamlBuilder()
    builder {out : output}
    File file = new File(workspace+"/"+ filename)
