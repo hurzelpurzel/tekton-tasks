@@ -1,0 +1,45 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: groovy-test-pipeline
+spec:
+  workspaces:
+    - name: shared-workspace
+  tasks:
+    - name: fetch-code
+      taskRef:
+        name: git-clone
+      workspaces:
+        - name: output
+          workspace: shared-workspace
+      params:
+        - name: url
+          value: https://github.com/hurzelpurzel/TektonTasks.git
+        - name: subdirectory
+          value: "test"
+        - name: deleteExisting
+          value: "true"
+    - name: groovy-run
+      taskRef:
+        name: groovy
+      runAfter:
+        - fetch-code
+      params:
+        - name: SCRIPT
+          value: "main.groovy"
+      workspaces:
+        - name: source
+          workspace: shared-workspace
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: groovy-test-pipeline-rune
+spec:
+  pipelineRef:
+    name: groovy-test-pipeline
+  workspaces:
+    - name: shared-workspace
+      persistentvolumeclaim:
+        claimName: groovy-source-pvc
