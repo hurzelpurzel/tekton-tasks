@@ -16,8 +16,12 @@ def writeOutput(filename, output){
    def workspace = System.getenv('WORKSPACE_SOURCE')
    def builder = new YamlBuilder()
    builder {out : output}
+   text = builder.toString()
+
+   println text
+   
    File file = new File(workspace+"/"+ filename)
-   file.write builder.toString()
+   file.write text
 }
 
 def output = [:]
