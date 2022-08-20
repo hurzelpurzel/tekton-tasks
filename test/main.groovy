@@ -14,7 +14,7 @@ def loadInput(filename){
 
 def writeOutput(filename, output){
    def builder = new YamlBuilder()
-   builder.out = output
+   builder {out : output}
    File file = new File(workspace+"/"+ filename)
    file.write builder.toString()
 }
