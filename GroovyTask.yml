@@ -20,7 +20,7 @@ spec:
     - name: GROOVY_IMAGE
       description: Gradle base image.
       type: string
-      default: docker.io/library/Groovy:jdk-17
+      default: docker.io/library/groovy:latest
     - name: PROJECT_DIR
       description: The directory containing groovy scripts
       type: string
