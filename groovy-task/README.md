@@ -64,3 +64,5 @@ spec:
         claimName: groovy-source-pvc
 
 ```
+
+published at [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/groovy-task)](https://artifacthub.io/packages/search?repo=groovy-task)
