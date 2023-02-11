@@ -13,6 +13,9 @@ metadata:
     artifacthub.io/provider: "hurzelpurzel"
     artifacthub.io/license: "Apache-2.0"
     artifacthub.io/alternativeName: "groovy"
+    artifacthub.io/links: |
+      - name: source
+        url: https://github.com/hurzelpurzel/tekton-tasks.git
 spec:
   description: >-
     This Task can be used to run a Groovy script.
