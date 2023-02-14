@@ -1,4 +1,5 @@
 # Groovy Task
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/groovy-task)](https://artifacthub.io/packages/search?repo=groovy-task)
 
 This Task can be used to run a Groovy script. This might be helpfull if you would like to reuse Jenkins Pipelines, but at present it does not contain any Jenkins dependencies.
 
@@ -64,3 +65,5 @@ spec:
         claimName: groovy-source-pvc
 
 ```
+
+
