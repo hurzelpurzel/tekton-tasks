@@ -25,7 +25,7 @@ spec:
         - fetch-code
       params:
         - name: SCRIPT
-          value: "groovy-task/test/main.groovy"
+          value: "task/groovy-task/test/main.groovy"
       workspaces:
         - name: source
           workspace: shared-workspace
