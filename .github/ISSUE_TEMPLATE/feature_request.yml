@@ -1,0 +1,27 @@
+name: Feature request
+description: Propose an idea or enhancement for a Tekton Task
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea. Please describe the feature you would like to see.
+  - type: input
+    id: task
+    attributes:
+      label: Task
+      description: Which task does this relate to (e.g. `groovy`)?
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem would this solve or what use case is missing?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the feature and, if possible, how it should behave.
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Tekton Community
+    url: https://github.com/tektoncd
+    about: Questions about Tekton itself belong in the Tekton community repositories.

@@ -20,7 +20,7 @@ spec:
           value: "true"
     - name: groovy-run
       taskRef:
-        name: groovy
+        name: groovy-task
       runAfter:
         - fetch-code
       params:
@@ -31,12 +31,12 @@ spec:
           workspace: shared-workspace
     - name: groovy-show
       taskRef:
-        name: groovy
+        name: groovy-task
       runAfter:
         - groovy-run
       params:
         - name: SCRIPT
-          value: "test/display.groovy"
+          value: "task/groovy-task/test/display.groovy"
       workspaces:
         - name: source
           workspace: shared-workspace
@@ -44,7 +44,7 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: groovy-test-pipeline-rune
+  name: groovy-test-pipeline-run
 spec:
   pipelineRef:
     name: groovy-test-pipeline
